@@ -2,18 +2,19 @@ const express = require('express')
 const session = require('express-session')
 const Controller = require('./controllers/index')
 const app = express()
-const port = process.env.PORT ||3000
+const port = process.env.PORT || 3000
 
-app.use(express.urlencoded({extended:true}))
-app.set('view engine','ejs')
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static('public'));
+app.set('view engine', 'ejs')
 app.use(session({
   secret: 'yang tau aja', //untuk mengamankan session kita (wajib ada)
   resave: false, //untuk  tidak menyimpan perubahan email / uname dri user 
-  saveUninitialized: false, 
-  cookie: { 
+  saveUninitialized: false,
+  cookie: {
     secure: false,
-    sameSite: true 
-  } 
+    sameSite: true
+  }
 }))
 
 

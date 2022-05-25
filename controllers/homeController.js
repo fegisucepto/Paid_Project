@@ -1,15 +1,15 @@
 "use strict"
 const { Op } = require("sequelize");
-const {User, Course, User_Course, UserIdentity} = require("../models")
+const { User, Course, User_Course, UserIdentity } = require("../models")
 const convertToRupiah = require("../helpers/convertToRp");
 const useridentity = require("../models/useridentity");
-class HomeController{
-    static home(req, res){
+class HomeController {
+    static home(req, res) {
         let id = req.session.iduser
-        res.render("home", {id});
+        res.render("home", { id });
     }
 
-    static courses(req, res){
+    static courses(req, res) {
 
 
         let options = {
@@ -38,9 +38,9 @@ class HomeController{
         let purchased;
         let output;
 
-        Course.findAll(options) ,{
+        Course.findAll(options), {
             include: {
-                model : User
+                model: User
 
             }
         }
@@ -48,7 +48,7 @@ class HomeController{
             .then(data => {
                 output = data;
                 return Course.findAll({
-                    attributes:  ["id"],
+                    attributes: ["id"],
                     include: {
                         model: User,
                         where: {
@@ -58,7 +58,7 @@ class HomeController{
                 })
             })
             .then((data) => {
-                purchased=data
+                purchased = data
                 return UserIdentity.findAll({
                     where: {
                         id: userid
@@ -67,7 +67,7 @@ class HomeController{
             })
             .then((useridentity) => {
                 console.log(useridentity);
-                res.render("courses", {data: output, convertToRupiah, role, userid, purchased: purchased, useridentity});
+                res.render("kursus", { data: output, convertToRupiah, role, userid, purchased: purchased, useridentity });
             })
             .catch(err => {
                 console.log(err, "eeee");
@@ -75,105 +75,105 @@ class HomeController{
             })
     }
 
-    static buy(req, res){
+    static buy(req, res) {
         const CourseId = req.params.id
         User_Course.create({
             CourseId: +CourseId,
             UserId: req.session.iduser
         })
-        .then(() => {
-            res.redirect("/home/courses")
-        })
-        .catch((err) => {
-            res.render(err);
-        })
+            .then(() => {
+                res.redirect("/home/courses")
+            })
+            .catch((err) => {
+                res.render(err);
+            })
     }
 
-    static addCourse(req, res){
+    static addCourse(req, res) {
         let errors = req.query.errors
-        res.render("addPage", {errors});
+        res.render("addPage", { errors });
     }
 
-    static addToDB(req, res){
+    static addToDB(req, res) {
         const body = req.body;
-        const {name, imageURL, description, price} = body
+        const { name, imageURL, description, price } = body
         console.log(body);
         Course.create({
-            name:name,
+            name: name,
             imageURL: imageURL,
             description: description,
             price: +price
         })
-        .then(() => {
-            res.redirect("/home/courses")
-        })
-        .catch((err) => {
-            let result = []
-            if (err.name == "SequelizeValidationError") {
-            err.errors.forEach(x=>{
-                result.push(x.message)
+            .then(() => {
+                res.redirect("/home/courses")
             })
-            return res.redirect(`/home/courses/add?errors=${result}`)
-            } else {
-                res.send(err)
+            .catch((err) => {
+                let result = []
+                if (err.name == "SequelizeValidationError") {
+                    err.errors.forEach(x => {
+                        result.push(x.message)
+                    })
+                    return res.redirect(`/home/courses/add?errors=${result}`)
+                } else {
+                    res.send(err)
 
-            }
-        })
+                }
+            })
     }
 
-    static editPage(req, res){
+    static editPage(req, res) {
         const id = req.params.id
         Course.findAll({
-            where: {id: +id}
+            where: { id: +id }
         })
-        .then((data) => {
-            let errors = req.query.errors
-            res.render("editPage", {data, errors})
-        })
-        .catch((err) => {
-            res.render(err);
-        })
+            .then((data) => {
+                let errors = req.query.errors
+                res.render("editPage", { data, errors })
+            })
+            .catch((err) => {
+                res.render(err);
+            })
     }
 
-    static editData(req, res){
+    static editData(req, res) {
         const body = req.body;
-        const {name, imageURL, description, price} = body
+        const { name, imageURL, description, price } = body
         console.log(body);
         Course.update({
-            name:name,
+            name: name,
             imageURL: imageURL,
             description: description,
             price: +price
         },
-        {
-            where: {
-                id: +req.params.id
-            }
-        })
-        .then(() => {
-            res.redirect("/home/courses")
-        })
-        .catch((err) => {
-            let result = []
-            if (err.name == "SequelizeValidationError") {
-            err.errors.forEach(x=>{
-                result.push(x.message)
+            {
+                where: {
+                    id: +req.params.id
+                }
             })
-            return res.redirect(`/home/courses/edit/${req.params.id}?errors=${result}`)
-            } else {
-                res.send(err)
+            .then(() => {
+                res.redirect("/home/courses")
+            })
+            .catch((err) => {
+                let result = []
+                if (err.name == "SequelizeValidationError") {
+                    err.errors.forEach(x => {
+                        result.push(x.message)
+                    })
+                    return res.redirect(`/home/courses/edit/${req.params.id}?errors=${result}`)
+                } else {
+                    res.send(err)
 
-            }
-        })
+                }
+            })
     }
 
-    static delete(req, res){
+    static delete(req, res) {
         const CourseId = req.params.id
         Course.deleteCourse(CourseId)
-        .then(() => res.redirect("/home/courses"))
-        .catch(err => {
-            res.render(err);
-        })
+            .then(() => res.redirect("/home/courses"))
+            .catch(err => {
+                res.render(err);
+            })
     }
 }
 
