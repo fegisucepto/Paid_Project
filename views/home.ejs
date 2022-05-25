@@ -25,8 +25,8 @@
         --bs-indigo: #6610f2;
         --bs-purple: #6f42c1;
         --bs-pink: #d63384;
-        --bs-red: #dc3545;
-        --bs-orange: #f4623a;
+        --bs-red: #343a40;
+        --bs-orange: #;
         --bs-yellow: #ffc107;
         --bs-green: #198754;
         --bs-teal: #20c997;
@@ -269,11 +269,11 @@
       }
 
       a {
-        color: #f4623a;
+        color: #343a40;
         text-decoration: underline;
       }
       a:hover {
-        color: #c34e2e;
+        color: #343a40;
       }
 
       a:not([href]):not([class]),
@@ -2540,8 +2540,8 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
-        -webkit-print-color-adjust: exact;
-        color-adjust: exact;
+        /* -webkit-print-color-adjust: exact;
+        color-adjust: exact; */
       }
       .form-check-input[type="checkbox"] {
         border-radius: 0.25em;
@@ -2558,8 +2558,8 @@
         box-shadow: 0 0 0 0.25rem rgba(244, 98, 58, 0.25);
       }
       .form-check-input:checked {
-        background-color: #f4623a;
-        border-color: #f4623a;
+        background-color: #857c79;
+        border-color: #645c59;
       }
       .form-check-input:checked[type="checkbox"] {
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e");
@@ -2568,8 +2568,8 @@
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
       }
       .form-check-input[type="checkbox"]:indeterminate {
-        background-color: #f4623a;
-        border-color: #f4623a;
+        background-color: #645c59;
+        border-color: #645c59;
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
       }
       .form-check-input:disabled {
@@ -2648,7 +2648,7 @@
         width: 1rem;
         height: 1rem;
         margin-top: -0.25rem;
-        background-color: #f4623a;
+        background-color: #645c59;
         border: 0;
         border-radius: 1rem;
         -webkit-transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
@@ -3004,7 +3004,7 @@
 
       .was-validated .form-control:invalid,
       .form-control.is-invalid {
-        border-color: #dc3545;
+        border-color: #645c59;
         padding-right: calc(1.5em + 0.75rem);
         background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
         background-repeat: no-repeat;
@@ -3013,7 +3013,7 @@
       }
       .was-validated .form-control:invalid:focus,
       .form-control.is-invalid:focus {
-        border-color: #dc3545;
+        border-color: #645c59;
         box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
       }
 
@@ -3025,7 +3025,7 @@
 
       .was-validated .form-select:invalid,
       .form-select.is-invalid {
-        border-color: #dc3545;
+        border-color: #645c59;
       }
       .was-validated .form-select:invalid:not([multiple]):not([size]),
       .was-validated .form-select:invalid:not([multiple])[size="1"],
@@ -3039,17 +3039,17 @@
       }
       .was-validated .form-select:invalid:focus,
       .form-select.is-invalid:focus {
-        border-color: #dc3545;
+        border-color: #645c59;
         box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
       }
 
       .was-validated .form-check-input:invalid,
       .form-check-input.is-invalid {
-        border-color: #dc3545;
+        border-color: #645c59;
       }
       .was-validated .form-check-input:invalid:checked,
       .form-check-input.is-invalid:checked {
-        background-color: #dc3545;
+        background-color: #645c59;
       }
       .was-validated .form-check-input:invalid:focus,
       .form-check-input.is-invalid:focus {
@@ -3057,7 +3057,7 @@
       }
       .was-validated .form-check-input:invalid ~ .form-check-label,
       .form-check-input.is-invalid ~ .form-check-label {
-        color: #dc3545;
+        color: #645c59;
       }
 
       .form-check-inline .form-check-input ~ .invalid-feedback {
@@ -3120,19 +3120,19 @@
 
       .btn-primary {
         color: #fff;
-        background-color: #f4623a;
-        border-color: #f4623a;
+        background-color: #645c59;
+        border-color: #645c59;
       }
       .btn-primary:hover {
         color: #fff;
-        background-color: #cf5331;
-        border-color: #c34e2e;
+        background-color: #645c59;
+        border-color: #645c59;
       }
       .btn-check:focus + .btn-primary,
       .btn-primary:focus {
         color: #fff;
-        background-color: #cf5331;
-        border-color: #c34e2e;
+        background-color: #645c59;
+        border-color: #645c59;
         box-shadow: 0 0 0 0.25rem rgba(246, 122, 88, 0.5);
       }
       .btn-check:checked + .btn-primary,
@@ -3141,8 +3141,8 @@
       .btn-primary.active,
       .show > .btn-primary.dropdown-toggle {
         color: #fff;
-        background-color: #c34e2e;
-        border-color: #b74a2c;
+        background-color: #645c59;
+        border-color: #645c59;
       }
       .btn-check:checked + .btn-primary:focus,
       .btn-check:active + .btn-primary:focus,
@@ -3154,8 +3154,8 @@
       .btn-primary:disabled,
       .btn-primary.disabled {
         color: #fff;
-        background-color: #f4623a;
-        border-color: #f4623a;
+        background-color: #645c59;
+        border-color: #645c59;
       }
 
       .btn-secondary {
@@ -3320,8 +3320,8 @@
 
       .btn-danger {
         color: #fff;
-        background-color: #dc3545;
-        border-color: #dc3545;
+        background-color: #645c59;
+        border-color: #645c59;
       }
       .btn-danger:hover {
         color: #fff;
@@ -3439,13 +3439,13 @@
       }
 
       .btn-outline-primary {
-        color: #f4623a;
-        border-color: #f4623a;
+        color: #645c59;
+        border-color: #645c59;
       }
       .btn-outline-primary:hover {
         color: #fff;
-        background-color: #f4623a;
-        border-color: #f4623a;
+        background-color: #645c59;
+        border-color: #645c59;
       }
       .btn-check:focus + .btn-outline-primary,
       .btn-outline-primary:focus {
@@ -3457,8 +3457,8 @@
       .btn-outline-primary.active,
       .btn-outline-primary.dropdown-toggle.show {
         color: #fff;
-        background-color: #f4623a;
-        border-color: #f4623a;
+        background-color: #645c59;
+        border-color: #645c59;
       }
       .btn-check:checked + .btn-outline-primary:focus,
       .btn-check:active + .btn-outline-primary:focus,
@@ -3469,7 +3469,7 @@
       }
       .btn-outline-primary:disabled,
       .btn-outline-primary.disabled {
-        color: #f4623a;
+        color: #645c59;
         background-color: transparent;
       }
 
@@ -3614,13 +3614,13 @@
       }
 
       .btn-outline-danger {
-        color: #dc3545;
-        border-color: #dc3545;
+        color: #645c59;
+        border-color: #645c59;
       }
       .btn-outline-danger:hover {
         color: #fff;
-        background-color: #dc3545;
-        border-color: #dc3545;
+        background-color: #645c59;
+        border-color: #645c59;
       }
       .btn-check:focus + .btn-outline-danger,
       .btn-outline-danger:focus {
@@ -3632,8 +3632,8 @@
       .btn-outline-danger.active,
       .btn-outline-danger.dropdown-toggle.show {
         color: #fff;
-        background-color: #dc3545;
-        border-color: #dc3545;
+        background-color: #645c59;
+        border-color: #645c59;
       }
       .btn-check:checked + .btn-outline-danger:focus,
       .btn-check:active + .btn-outline-danger:focus,
@@ -4034,7 +4034,7 @@
       .dropdown-item:active {
         color: #fff;
         text-decoration: none;
-        background-color: #f4623a;
+        background-color: #645c59;
       }
       .dropdown-item.disabled,
       .dropdown-item:disabled {
@@ -4078,7 +4078,7 @@
       .dropdown-menu-dark .dropdown-item.active,
       .dropdown-menu-dark .dropdown-item:active {
         color: #fff;
-        background-color: #f4623a;
+        background-color: #645c59;
       }
       .dropdown-menu-dark .dropdown-item.disabled,
       .dropdown-menu-dark .dropdown-item:disabled {
@@ -4205,7 +4205,7 @@
       .nav-link {
         display: block;
         padding: 0.5rem 1rem;
-        color: #f4623a;
+        color: #645c59;
         text-decoration: none;
         transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
       }
@@ -4264,7 +4264,7 @@
       .nav-pills .nav-link.active,
       .nav-pills .show > .nav-link {
         color: #fff;
-        background-color: #f4623a;
+        background-color: #645c59;
       }
 
       .nav-fill > .nav-link,
@@ -11756,7 +11756,7 @@
             <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
 
             <%}%>
-            <li class="nav-item"><a class="nav-link" href="/home/courses">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="/home/courses">Paket Kursus</a></li>
             <% if(id){ %>
             <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
             <% } %>
@@ -11765,7 +11765,8 @@
       </div>
     </nav>
     <!-- Masthead-->
-    <header class="masthead">
+
+    <header class="page-section bg-primary">
       <div class="container px-4 px-lg-5 h-100">
         <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
           <div class="col-lg-8 align-self-end">
@@ -11785,41 +11786,6 @@
         </div>
       </div>
     </header>
-
-    <section class="page-section bg-primary" id="about">
-      <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5 justify-content-center">
-          <div class="col-lg-8 text-center">
-            <p></p>
-            <h2 class="text-white mt-0">Wujudkan Kolaborasi Untuk Masa Depan Pendidikan Indonesia</h2>
-            <hr class="divider divider-light" />
-            <h4 class="text-white mt-0"><b>Fleksibilitas Program</h4></p>
-            <p class="text-white mt-0">Tentukan sendiri waktu dan kelompok belajar secara digital</p>
-            <b><h3 class="text-white mt-0">Kompetensi Tinggi</h3></b>
-            <p class="text-white mt-0">Mendapatkan sertifikat resmi dari lembaga pendidikan terakreditasi</p>
-            <b><h3 class="text-white mt-0">Module</h3></b>
-            <p class="text-white mt-0">Bahan Ajar Berkualitas untuk persiapan PAS, SNMPTN, SBMPTN (UTBK) dan Ujian Mandiri.</p>
-            <br> <br> <br><br> <br> <br><br> <br>
-            <h2 class="text-white mt-0">About Us!</h2>
-            <hr class="divider divider-light" />
-
-            <p class="text-white-75 mb-4">
-              <b>Infokuliah.id</b> merupakan lembaga pendidikan nonformal yang berfokus pada bimbingan belajar persiapan Tes Perguruan Tinggi Negeri. <b>Infokuliah.id</b> terus mengembangkan berbagai layanan belajar berbasis teknologi,
-              termasuk layanan kelas virtual, tryout online, video belajar, serta konten-konten pendidikan lainnya.
-            </p>
-            <p class="text-white-75 mb-4">
-              <b>Infokuliah.id</b> terus mengembangkan berbagai layanan belajar berbasis teknologi, termasuk layanan kelas virtual, tryout online, video belajar, serta konten-konten pendidikan lainnya. <b>Infokuliah.id</b> terus
-              mengembangkan berbagai layanan belajar berbasis teknologi, termasuk layanan kelas virtual, tryout online, video belajar, serta konten-konten pendidikan lainnya.
-            </p>
-            <p class="text-white-75 mb-4">
-              <b>Infokuliah.id</b> memiliki misi untuk menyediakan dan memperluas akses terhadap pendidikan yang berkualitas melalui teknologi untuk semua kalangan. Kami percaya bahwa pendidikan adalah hak setiap manusia, kami juga meyakini
-              bahwa pendidikan adalah aset untuk masa depan anak yang lebih baik. Maka dari itu, kami bertujuan untuk menyediakan layanan pendidikan dan materi pembelajaran dari guru-guru terbaik kami.
-            </p>
-          </div>
-        </div>
-        <div></div>
-      </div>
-    </section>
 
     <!-- Footer-->
     <footer class="bg-light py-5 sticky-bottom">
