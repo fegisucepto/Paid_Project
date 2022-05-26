@@ -92,12 +92,12 @@ class Controller {
                     } else {
                         let errors = 'Invalid username/password'
                         return res.redirect(`/login?errors=${errors}`)
-                        // return res.send('email dan password gak cocok ni')
+                        
                     }
                 } else {
                     let errors = 'Invalid username/password'
                     return res.redirect(`/login?errors=${errors}`)
-                //   return  res.send('E-mail belom terdaftar')
+                
                 }
             })
             .catch(err => {

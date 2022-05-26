@@ -8,8 +8,8 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.static('public'));
 app.set('view engine', 'ejs')
 app.use(session({
-  secret: 'yang tau aja', //untuk mengamankan session kita (wajib ada)
-  resave: false, //untuk  tidak menyimpan perubahan email / uname dri user 
+  secret: 'yang tau aja',
+  resave: false, 
   saveUninitialized: false,
   cookie: {
     secure: false,
@@ -23,7 +23,6 @@ app.use("/home", require("./routes/home"))
 app.use("/login", require("./routes/login"))
 app.use("/logout", require("./routes/logout"))
 app.use("/register", require("./routes/register"))
-
 app.get('/logout', Controller.logOut)
 
 app.listen(port, () => {
